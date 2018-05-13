@@ -1,0 +1,27 @@
+server:
+  port: 8110
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
+
+spring:
+  application:
+    name: mysql-client
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb  #本地数据库地址，5432是postgresql的端口
+    username: postgres     #数据库用户名
+    password: 1666188122     #数据库密码
+    testWhileIdle: true #当连接空闲时，是否执行连接测试
+    validationQuery: SELECT 1  #指定获取连接时连接校验的sql查询语句.
+
+#    url: jdbc:postgresql://localhost:5432/testdb  #本地数据库地址，5432是postgresql的端口
+#    username: postgres     #数据库用户名
+#    password: 1666188122     #数据库密码
+#    testWhileIdle: true #当连接空闲时，是否执行连接测试
+#    validationQuery: SELECT 1  #指定获取连接时连接校验的sql查询语句.
+
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml   #指定mapperxml所在的位置，要用/分割

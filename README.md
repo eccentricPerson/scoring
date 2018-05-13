@@ -6,6 +6,7 @@
 | 序号   |      服务名称      |  服务端口 |功能|
 |----------|:-------------:|------:|------:|
 | 1  |  datastone-eureka-server | 8110 |服务注册与发现|
+| 2  |  datastone-mysql-client  | 8120 |Mysql数据抽取 |
 
 
 
@@ -36,6 +37,9 @@ EurekaServerApplication.java
 	        SpringApplication.run(EurekaServerApplication.class,args);
 	    }
 	}
+
+
+
 
 
 

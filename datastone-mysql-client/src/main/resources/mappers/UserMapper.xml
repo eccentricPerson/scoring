@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alearner.mappers.UserMapper"><!--注意这里的地址-->
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.alearner.model.mysql.User">
+        insert into user(name,sex,phone,email)VALUES (#{name},#{sex},#{phone},#{email})
+    </insert>
+    <select id="getUserById" resultType="com.alearner.model.mysql.User">
+        select * from user where id=#{id} and able_status = 1
+    </select>
+    <update id="updateUserById" parameterType="com.alearner.model.mysql.User">
+        update user
+        set name = #{name},
+        sex = #{sex},
+        phone = #{phone},
+        email = #{email},
+        able_status = #{ableStatus}
+        where id = #{id}
+    </update>
+</mapper>
