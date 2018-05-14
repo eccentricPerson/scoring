@@ -1,0 +1,20 @@
+server:
+  port: 8150
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/SDUxiaoma/UAffairsConfig   #配置文件仓库的地址，私密地址
+          searchPaths: uconfig     #查找的路径
+          username: yaccount       #账户
+          password: youpwd         #密码
+      label: master                #分支
+

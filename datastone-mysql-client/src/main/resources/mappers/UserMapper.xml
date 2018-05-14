@@ -7,7 +7,7 @@
         insert into user(name,sex,phone,email)VALUES (#{name},#{sex},#{phone},#{email})
     </insert>
     <select id="getUserById" resultType="com.alearner.model.mysql.User">
-        select * from user where id=#{id} and able_status = 1
+        select * from user where id=#{id} and able_status = TRUE
     </select>
     <update id="updateUserById" parameterType="com.alearner.model.mysql.User">
         update user

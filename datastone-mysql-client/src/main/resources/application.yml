@@ -1,5 +1,5 @@
 server:
-  port: 8110
+  port: 8120
 
 eureka:
   client:
@@ -10,11 +10,10 @@ spring:
   application:
     name: mysql-client
   datasource:
-    url: jdbc:postgresql://localhost:5432/testdb  #本地数据库地址，5432是postgresql的端口
-    username: postgres     #数据库用户名
-    password: 1666188122     #数据库密码
-    testWhileIdle: true #当连接空闲时，是否执行连接测试
-    validationQuery: SELECT 1  #指定获取连接时连接校验的sql查询语句.
+    url: jdbc:mysql://localhost:3306/datastone?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    username: myroot
+    password: Mzg...8535933570
+    driver-class-name: com.mysql.jdbc.Driver
 
 #    url: jdbc:postgresql://localhost:5432/testdb  #本地数据库地址，5432是postgresql的端口
 #    username: postgres     #数据库用户名
@@ -23,5 +22,21 @@ spring:
 #    validationQuery: SELECT 1  #指定获取连接时连接校验的sql查询语句.
 
 
+##mybatis
 mybatis:
-  mapper-locations: classpath:mappers/*.xml   #指定mapperxml所在的位置，要用/分割
+  mapper-locations: classpath:mappers/*.xml  #指定mapperxml所在的位置，要用/分割
+  type-aliases-package: com.alearner.model.mysql.*
+  check-config-location: true
+#  config-location: classpath:mybatis-config.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+#显示输出mybatis的执行sql
+logging:
+  level:
+    com:
+      alearner:
+        mapper:
+          mysql: debug
+

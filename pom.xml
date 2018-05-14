@@ -10,12 +10,15 @@
   <packaging>pom</packaging>
 
   <name>DataStone</name>
-  <url>http://www.example.com</url>
+  <url>http://www.alearner.top/</url>
 
   <modules>
-    <module>
-
-    </module>
+    <module>datastone-eureka-server</module>
+    <module>datastone-mysql-client</module>
+    <module>datastone-user-service</module>
+    <module>datastone-zuul-router</module>
+    <module>datastone-config-center</module>
+    <module>datastone-dynamic-datasources</module>
   </modules>
 
 </project>
