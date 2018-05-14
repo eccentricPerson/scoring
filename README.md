@@ -40,10 +40,10 @@
 7. 运行 datastone-user-service 中 UserServiceApplication的main方法,运行完毕可以访问 : [http://192.168.16.25:8130/user/getUserById?id=1](http://192.168.16.25:8130/user/getUserById?id=1)<br> RestApi接口可视化 ：[http://192.168.16.25:8130/swagger-ui.html](http://192.168.16.25:8130/swagger-ui.html) (尚未详细配置，可发现自己的接口，可展示api参数、在线调试接口等)
 8. 运行 datastone-zuul-router 中 ZuulRouterApplication的main方法，运行完毕可查看路由效果 ： 路由到user-service接口 [http://192.168.16.25:8140/record/user/getUserById?id=1](http://192.168.16.25:8140/record/user/getUserById?id=1)<br>路由到user-service模块的Api界面 ： [http://192.168.16.25:8140/record/swagger-ui.html](http://192.168.16.25:8140/record/swagger-ui.html)(其他模块路由同理)
 
+**以上步骤均未体现出负载均衡,负载均衡主要表现在nginx请求分发、zuul请求分发、restTemplate对实例的选择。**<br>
+**注 ： 模块均为开发环境下的单实例状态，线上环境或者测试环境需要将模块集群化。**
 
-
-
-部署框架 ： 
+**部署框架：**
 ![SpringCloud](SpringCloud骨架.png)
 
 
